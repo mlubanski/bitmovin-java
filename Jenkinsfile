@@ -5,9 +5,10 @@ pipeline {
         	stage('update-version') {
 			steps {
 				sh '''
+					#!/bin/sh
 					bash -x
 					cd $WORKSPACE
-					. $WORKSPACE/bitmovin-build-tools.sh
+					source $WORKSPACE/bitmovin-build-tools.sh
 					bm-update-version
 					bash +x
 				'''
