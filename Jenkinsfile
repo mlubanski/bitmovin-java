@@ -5,11 +5,11 @@ pipeline {
         	stage('update-version') {
 			steps {
 				sh '''
+					bash -x
 					cd $WORKSPACE
-					pwd
-					ls -la
-					. $WORKSPACE/bitmovin-build-tools.sh
+					source $WORKSPACE/bitmovin-build-tools.sh
 					bm-update-version
+					bash +x
 				'''
 			}
         	}
@@ -17,7 +17,7 @@ pipeline {
 			steps {
 				sh '''
 					cd $WORKSPACE
-					. $WORKSPACE/bitmovin-build-tools.sh
+					source $WORKSPACE/bitmovin-build-tools.sh
 					bm-package
 				'''
 			}
@@ -26,7 +26,7 @@ pipeline {
 			steps {
 				sh '''
 					cd $WORKSPACE
-					. $WORKSPACE/bitmovin-build-tools.sh
+					source $WORKSPACE/bitmovin-build-tools.sh
 					bm-create-docker
 				'''
 			}
@@ -35,7 +35,7 @@ pipeline {
 			steps {
 				sh '''
 					cd $WORKSPACE
-					. $WORKSPACE/bitmovin-build-tools.sh
+					source $WORKSPACE/bitmovin-build-tools.sh
 					bm-push-connntainer
 				'''
 			}
