@@ -1,5 +1,10 @@
 pipeline {
-	agent any 
+	agent any
+
+	tools {
+        	maven 'mvn_3.5.4'
+        	jdk 'jdk_8u181'
+    	}
 
 	stages {
         	stage('update-version') {
