@@ -8,8 +8,5 @@ pipeline {
 				bm-update-version
 			'''
         	}
-		stage('Example Test') {   
-			echo 'Hello, JDK'
-		}
 	}
 }
