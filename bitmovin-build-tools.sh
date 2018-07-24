@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 export CONTAINER_BASE_NAME="bitmovin-java"
 export DOCKER_ID_USER="matik06"
