@@ -3,20 +3,18 @@
 export CONTAINER_BASE_NAME="bitmovin-java"
 export DOCKER_ID_USER="matik06"
 
-if [[ -z $1 ]]; then 
-	echo ""
-	echo "===================================================================="
-	echo "Please type below command in order to load bitmovin build tools:"
-	echo "	 source ./bitmovin-build-tools.sh"
-	echo ""
-	echo "Availabe bitmovin functions: "
-	echo "	bm-update-version"
-	echo "	bm-package"
-	echo "	bm-create-docker"
-	echo "	bm-push-connntainer"
-	echo "===================================================================="
-	echo ""
-fi
+echo ""
+echo "===================================================================="
+echo "Please type below command in order to load bitmovin build tools:"
+echo "	 source ./bitmovin-build-tools.sh"
+echo ""
+echo "Availabe bitmovin functions: "
+echo "	bm-update-version"
+echo "	bm-package"
+echo "	bm-create-docker"
+echo "	bm-push-connntainer"
+echo "===================================================================="
+echo ""
 
 function bit_movin_update_version() {
 	#getting version from git
