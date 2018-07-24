@@ -8,7 +8,7 @@ pipeline {
 					cd $WORKSPACE
 					pwd
 					ls -la
-					source bitmovin-build-tools.sh
+					. bitmovin-build-tools.sh
 					bm-update-version
 				'''
 			}
@@ -17,7 +17,7 @@ pipeline {
 			steps {
 				sh '''
 					cd $WORKSPACE
-					source bitmovin-build-tools.sh
+					. bitmovin-build-tools.sh
 					bm-package
 				'''
 			}
@@ -26,7 +26,7 @@ pipeline {
 			steps {
 				sh '''
 					cd $WORKSPACE
-					source bitmovin-build-tools.sh
+					. bitmovin-build-tools.sh
 					bm-create-docker
 				'''
 			}
@@ -35,7 +35,7 @@ pipeline {
 			steps {
 				sh '''
 					cd $WORKSPACE
-					source bitmovin-build-tools.sh
+					. bitmovin-build-tools.sh
 					bm-push-connntainer
 				'''
 			}
