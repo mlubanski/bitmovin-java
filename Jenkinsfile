@@ -15,7 +15,7 @@ pipeline {
         	}
         	stage('package') {
 			steps {
-				sh '''
+				sh '''#!/bin/bash
 					cd $WORKSPACE
 					. $WORKSPACE/bitmovin-build-tools.sh
 					bm-package
@@ -24,7 +24,7 @@ pipeline {
         	}
         	stage('create-docker') {
 			steps {
-				sh '''
+				sh '''#!/bin/bash
 					cd $WORKSPACE
 					. $WORKSPACE/bitmovin-build-tools.sh
 					bm-create-docker
@@ -33,7 +33,7 @@ pipeline {
         	}
         	stage('push-connntainer') {
 			steps {
-				sh '''
+				sh '''#!/bin/bash
 					cd $WORKSPACE
 					. $WORKSPACE/bitmovin-build-tools.sh
 					bm-push-connntainer
